@@ -1,0 +1,34 @@
+{
+  "name": "nodejs_group22",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "start:dev": "node app.ts",
+    "execute": "node index.js",
+    "test": "node index.js",
+    "app": "node app.ts",
+    "prebuild": "npm run clean",
+    "build": "tsc app.ts",
+    "postbuild": "node app.js",
+    "clean": "rimraf app.js",
+    "traspile": "npm run clean && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cursosdevfull/NodeJS_Group22.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/cursosdevfull/NodeJS_Group22/issues"
+  },
+  "homepage": "https://github.com/cursosdevfull/NodeJS_Group22#readme",
+  "devDependencies": {
+    "rimraf": "^6.0.1",
+    "typescript": "^5.9.2"
+  }
+}
