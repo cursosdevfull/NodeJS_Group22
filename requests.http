@@ -1,0 +1,2 @@
+post http://localhost:3000/api/pdf
+Content-Type: application/pdf
