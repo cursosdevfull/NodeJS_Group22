@@ -1,0 +1,33 @@
+{
+  "name": "project_typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "turbo run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cursosdevfull/NodeJS_Group22.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/cursosdevfull/NodeJS_Group22/issues"
+  },
+  "homepage": "https://github.com/cursosdevfull/NodeJS_Group22#readme",
+  "private": true,
+  "engines": {
+    "node": "22.12.0"
+  },
+  "packageManager": "npm@14.4.2",
+  "workspaces": [
+    "apps/*",
+    "libs/*"
+  ],
+  "devDependencies": {
+    "turbo": "^2.5.6"
+  }
+}

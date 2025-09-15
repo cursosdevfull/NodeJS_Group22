@@ -1,0 +1,14 @@
+### Create user
+post http://localhost:3000/v1/user
+Content-Type: application/json
+
+{
+    "name": "John",
+    "lastname": "Daemon"
+}
+
+### Create user with x-www-form-urlencoded
+post http://localhost:3000/v1/user
+Content-Type: application/x-www-form-urlencoded
+
+name=Jane&lastname=Doe
