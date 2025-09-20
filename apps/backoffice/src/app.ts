@@ -2,6 +2,8 @@ import express, { Application } from "express";
 import { cpuUsage, memoryUsage } from "process";
 import { userRoutes as userRoutesV1 } from "./modules/user/v1/routes";
 import { userRoutes as userRoutesV2 } from "./modules/user/v2/routes";
+import { courseRoutes } from "./modules/course/v1/presentation/course.routes";
+import { getRoutes } from "./modules/core/utils/routes";
 
 class App {
     readonly app: Application = express();
@@ -41,6 +43,11 @@ class App {
     private mountRoutes(): void {
         this.app.use("/v1/user", userRoutesV1);
         this.app.use("/v2/user", userRoutesV2);
+        this.app.use("/v1/course", courseRoutes)
+
+        getRoutes("/v1/user", userRoutesV1);
+        getRoutes("/v2/user", userRoutesV2);
+        getRoutes("/v1/course", courseRoutes);
     }
 }
 
