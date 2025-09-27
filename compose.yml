@@ -1,0 +1,32 @@
+services:
+  server-mysql:
+    image: mysql:8
+    container_name: server-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345
+      MYSQL_USER: user
+      MYSQL_PASSWORD: 12345
+      MYSQL_DATABASE: db
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./data:/var/lib/mysql
+    networks:
+      - app-network
+
+  client-mysql:
+    image: phpmyadmin
+    container_name: client-mysql
+    environment:
+      # PMA_ARBITRARY: 1
+      PMA_HOST: server-mysql
+      PMA_USER: user
+      PMA_PASSWORD: 12345
+    ports:
+      - "8080:80"
+    networks:
+      - app-network      
+
+networks:
+  app-network:
+    driver: bridge
