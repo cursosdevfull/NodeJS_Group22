@@ -1,0 +1,42 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "rootDir": "./",
+        "baseUrl": "./",
+        "noEmit": true,
+        "paths": {
+            "@auth": [
+                "./src/modules/auth/index.ts"
+            ],
+            "@bootstrap": [
+                "./src/bootstrap/index.ts"
+            ],
+            "@core": [
+                "./src/core/index.ts"
+            ],
+            "@role": [
+                "./src/modules/role/index.ts"
+            ],
+            "@user": [
+                "./src/modules/user/index.ts"
+            ],
+            "modules/*": [
+                "./src/modules/*"
+            ],
+            "bootstrap/*": [
+                "./src/bootstrap/*"
+            ],
+            "core/*": [
+                "./src/core/*"
+            ]
+        }
+    },
+    "include": [
+        "src/**/*",
+        "test/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist"
+    ]
+}

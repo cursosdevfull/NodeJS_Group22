@@ -1,0 +1,16 @@
+### Login
+post http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "email": "pedro.cotrina@example.com",
+    "password": "securepassword"
+}
+
+### Get New Access Token
+post http://localhost:3000/auth/get-new-access-token
+Content-Type: application/json
+
+{
+    "refreshToken": "dd4b71c2-3e91-437d-a29c-ab2331b43bfa"
+}

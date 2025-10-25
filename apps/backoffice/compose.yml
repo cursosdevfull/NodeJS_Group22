@@ -1,0 +1,52 @@
+services:
+  server-mysql:
+    image: mysql:8
+    container_name: server-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345
+      MYSQL_USER: user
+      MYSQL_PASSWORD: 12345
+      MYSQL_DATABASE: db
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./data:/var/lib/mysql
+    networks:
+      - app-network
+
+  client-mysql:
+    image: phpmyadmin
+    container_name: client-mysql
+    environment:
+      PMA_HOST: server-mysql
+      PMA_USER: user
+      PMA_PASSWORD: 12345
+    ports:
+      - "8090:80"
+    networks:
+      - app-network
+
+  server-redis:
+    image: redis:6.0.5-alpine
+    container_name: server-redis
+    command: redis-server --requirepass 12345
+    ports:
+      - "6379:6379"
+    networks:
+      - app-network
+
+  client-redis:
+    image: rediscommander/redis-commander:latest
+    container_name: client-redis
+    environment:
+      REDIS_HOST: server-redis
+      REDIS_PORT: 6379
+      REDIS_PASSWORD: 12345
+    ports:
+      - "8081:8081"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

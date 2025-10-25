@@ -1,0 +1,37 @@
+### Create User
+post http://localhost:3000/user
+Content-Type: application/json
+
+{
+    "name": "Pedro Cotrina",
+    "email": "pedro.cotrina@example.com",
+    "password": "securepassword",
+    "roles": [{"roleId": 1}, {"roleId": 2}]
+}
+
+### Get Users
+get http://localhost:3000/user
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiUGVkcm8gQ290cmluYSIsImVtYWlsIjoicGVkcm8uY290cmluYUBleGFtcGxlLmNvbSIsInJvbGVzIjpbIkFETUlOIiwiT1BFUkFUT1IiXSwiaWF0IjoxNzYwODAyMTQ4LCJleHAiOjE3NjA4MDU3NDh9.5uRzCVYcMeT1zklq0vvBizcDNctcUEg5_US60zxk7aM
+
+### Get Users by ID
+get http://localhost:3000/user/6
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiUGVkcm8gQ290cmluYSIsImVtYWlsIjoicGVkcm8uY290cmluYUBleGFtcGxlLmNvbSIsInJvbGVzIjpbIkFETUlOIiwiT1BFUkFUT1IiXSwiaWF0IjoxNzYwNzk3NTExLCJleHAiOjE3NjA4MDExMTF9.QmtB6_NRtzu8sPAXJpmdvDfpwp6YposXkRxJBtAReTY
+
+
+### Get Users by Page
+get http://localhost:3000/user/page?page=1&limit=2
+
+### Update User
+put http://localhost:3000/user/5
+Content-Type: application/json
+
+{
+    "name": "Pedro Cotrina Updated",
+    "email": "pedro.cotrina.updated@example.com",
+    "password": "newsecurepassword",
+    "roles": [{"roleId": 1}, {"roleId": 2}]
+}
+
+### Delete User
+delete http://localhost:3000/user/5
+

@@ -1,0 +1,1 @@
+export * from "./adapters/entities/role.entity"
